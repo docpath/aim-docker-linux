@@ -7,7 +7,7 @@ This is a complete example about how to deploy DocPath ® Access and Identity Ma
  
 ## Steps 
 To successfully perform the example follow the steps as indicated below:
-- Use the mbe1224/debian-oracle-java:stretch-slim-jre8 image. This is a Linux Debian image with Oracle JRE 8 pre-installed.
+- Use the openjdk:8 image. This is a Linux Debian image with OpenJDK 8 pre-installed.
 - Install DocPath ® Access and Identity Management.
 - Copy the license file into the image.
 - Use port 8080 to receive generation requests.
