@@ -7,6 +7,7 @@ WORKDIR /required_files
 RUN java -jar aim-installer.jar -console -silentmode -install "-solution/usr/local/docpath/AccessIdentityManagement" "-solnameDocPath Access Identity Management Pack" -adminusernameadmin -adminpasswordadmin -databaseserverMySQL/MariaDB -databasenametmp -databasehostmysql -databaseport3306 -databaseuserroot -databasepasswordroot -installlicenseserver "-licserverpath/usr/local/docpath/licenseserver" -licserverport1765 -databasecheckconnectionfalse
 WORKDIR /
 RUN rm -rf /required_files
+COPY licenseserver.ini /usr/local/docpath/licenseserver/licenseserver/Configuration/
 COPY DocPath_License_File.olc /usr/local/docpath/Licenses/
 COPY run.sh /usr/local/bin/
 RUN chmod 755 /usr/local/bin/run.sh
