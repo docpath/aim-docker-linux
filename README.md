@@ -45,7 +45,7 @@ Run the container once it has been built, using the following sentence:
 `docker run --name aim --hostname <container_hostname> --detach -p 8080:8080 -e DB_HOST=<db_ip> -e DB_PORT=<db_port> -e DB_USER=<db_user> -e DB_PASS=<db_pass> -e DB_NAME=<db_name> docpath/aim`
 
 The used parameters are:
-- `--name`: this parameter indicates the name of the container, in this case dge.
+- `--name`: this parameter indicates the name of the container, in this case aim.
 - `--hostname`: this parameter indicates the hostname of the machine with the license.
 - `--detach`: this parameter indicates that no messages are displayed in the execution console, silent mode.
 - `-p 8080:8080`: this parameter indicates the port of both host machine and aim.
