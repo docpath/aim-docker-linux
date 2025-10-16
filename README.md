@@ -3,7 +3,7 @@
 This is a complete example about how to deploy DocPath ® Access and Identity Management in Linux using Docker. The example must be completed with the following files in the same directory as the repositorized files:
 
 - `aim-installer-2.X.Y.jar`: DocPath ® Access and Identity Management Installer.
-- `DocPath License File.olc`: License file.
+- `license.olc`: License file.
  
 ## Steps 
 To successfully perform the example, follow the steps as indicated below:
@@ -29,8 +29,8 @@ Now we are going to build the container by executing the following sentence in t
 In the installation, the following values has been taken by default:
 - -adminusername**admin**
 - -adminpassword**admin**
-- -databaseserver**MySQL/MariaDB** 
-- -databasename**tmp** 
+- -databaseserver**MySQL** 
+- -databasename**aim** 
 - -databasehost**mysql** 
 - -databaseport**3306** 
 - -databaseuser**root**
@@ -42,7 +42,7 @@ In the installation, the following values has been taken by default:
 
 Run the container once it has been built, using the following sentence:
 
-`docker run --name aim --hostname <container_hostname> --detach -p 8080:8080 -e DB_HOST=<db_ip> -e DB_PORT=<db_port> -e DB_USER=<db_user> -e DB_PASS=<db_pass> -e DB_NAME=<db_name> docpath/aim`
+`docker run --name aim --hostname <container_hostname> --detach -p 8080:8080 -e DB_HOST=<db_ip> -e DB_PORT=<db_port> -e DB_USER=<db_user> -e DB_PASS=<db_pass> -e DB_NAME=<db_name> -e DB_INFO=<db_info> -e LICENSE_ADDRESS=<license_address> -e LICENSE_PORT=<license_port> -e TRANSACTION_ID=<transaction_id> -e SHUTDOWN_SESSION=<shutdown_session> docpath/aim`
 
 The used parameters are:
 - `--name`: this parameter indicates the name of the container, in this case aim.
@@ -54,3 +54,8 @@ The used parameters are:
 - `db_user`: User with privileges to connect to the database.
 - `db_pass`: Password of the user with privileges.
 - `db_name`: Name of the database or schema where AIM is installed.
+- `db_info`: ID value of db_info table in the database or schema where AIM is installed.
+- `license_address`: IP of the license server.
+- `license_port`: Port of the license server.
+- `transaction_id`: Transaction ID of the .ocl license.
+- `shutdown_session`: Could be yes/no.
